@@ -7,13 +7,13 @@ import java.io.IOException;
 public class Day3P2 {
 
     public static int rideSlope(int xIncrement, int yIncrement) throws IOException {
-//        BufferedReader reader = new BufferedReader(new FileReader("src/day_03/input.txt"));
-        BufferedReader reader = new BufferedReader(new FileReader("src/day_03/test.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("src/day_03/input.txt"));
         int x = 0;
         int y = 0;
         int trees = 0;
-        String entry = reader.readLine();
 
+        //Read each line of the input
+        String entry = reader.readLine();
         while(entry != null) {
             if (y % yIncrement == 0) {
                 if (entry.charAt(x) == '#') {
@@ -24,9 +24,9 @@ public class Day3P2 {
                 if (x >= entry.length()) {
                     x = x - entry.length();
                 }
-                entry = reader.readLine();
             }
             y++;
+            entry = reader.readLine();
         }
         return trees;
     }
